@@ -1,4 +1,5 @@
-**Executive Summary**
+*<img width="1254" height="706" alt="스크린샷 2025-10-31 18-01-51" src="https://github.com/user-attachments/assets/44aa934b-862f-4978-8f82-2c8de99803fa" />
+*Executive Summary**
 The industry is entering a major transition in which the entire physical world is being reorganized into a trainable structure powered by WFM, RFM, and AI Agents. I aim to stand at the forefront of this shift by helping customers implement Physical AI in real industrial environments using NVIDIA Omniverse. My experience connecting AMRs, mini-loaders, conveyors, humanoids, Digital Twins, and RL/IL pipelines into a single end-to-end cycle has given me a deep engineering understanding of how to integrate real-world control, simulation, and AI learning. I have repeatedly identified and solved fundamental mismatches between physical systems, simulation behavior, and AI training, building scalable architectures across OpenUSD, Isaac Sim/Lab, Synthetic Data, and Jetson deployment. Through extensive collaboration with major Korean enterprises and government institutions, I have also gained a practical understanding of the organizational dynamics, decision-making patterns, and PoC→Pilot→Deployment bottlenecks they face when adopting Omniverse. This insight allows me to support customers not only technically but strategically. I am deeply passionate about creatively solving the complex challenges of Physical AI, and I hope to contribute at NVIDIA KOREA where this historic transformation of industry is being built at the front line.
 
 **SKILL**
@@ -10,6 +11,8 @@ Simulation (Omniverse, Isaac Sim, USD, PhysX) · Robotics (ROS2, Jetson, Control
 I am the main developer of POLLUX, the first team in Korea to receive NVIDIA SAC NPN partnership for Omniverse solutions. Using NVIDIA Omniverse as my core tool, I have researched logistics simulation and successfully delivered multiple B2B projects. My development approach centers on key logistics assets and their operational integration with WCS and WMS layers.
 
 **1.Meta Quest–based Imitation Learning, Synthetic Dataset Pipeline & Virtual Testbed for Humanoids (2025)**
+<img width="823" height="642" alt="스크린샷 2025-08-26 13-15-49" src="https://github.com/user-attachments/assets/05a767a6-6d27-4160-9780-144de696dbc8" />
+
 A project to collect human demonstration data and accelerate synthetic dataset generation for humanoid IL training.
 [Main Tasks]
 Meta Quest motion capture → Unity → Control Server → ROS2 → Isaac Sim humanoid action retargeting
