@@ -15,7 +15,7 @@ I am the main developer of POLLUX, the first team in Korea to receive NVIDIA SAC
 **1.Meta Quest–based Imitation Learning, Synthetic Dataset Pipeline & Virtual Testbed for Humanoids (2025)**
 <img width="2283" height="1269" alt="스크린샷 2025-11-26 17-09-58" src="https://github.com/user-attachments/assets/b37e05bf-c690-47f7-8235-df9dd85245d7" />
 A project to collect human demonstration data and accelerate synthetic dataset generation for humanoid IL training.
-<br />
+<br /><br />
 [Main Tasks]
 Meta Quest motion capture → Unity → Control Server → ROS2 → Isaac Sim humanoid action retargeting
 Trajectory dataset generation for imitation learning
