@@ -8,7 +8,7 @@ The industry is entering a major transition in which the entire physical world i
 Simulation (Omniverse, Isaac Sim, USD, PhysX) · Robotics (ROS2, Jetson, Control) · AI for Robotics (RL/IL, GR00T, Synthetic Data) · Vision (YOLO, TensorRT) · Motion Capture (Meta Quest, Unity) · Logistics Automation (WCS/WMS Integration) · Embedded & System Architecture Design
 
 **WORK EXPERIENCE**<br />
-  **POLLUX**(2022.07 - Currently employed)
+  **POLLUX** (2022.07 - Currently employed)
 Digital Twin Engineer - Digital Twin Division
 I am the main developer of POLLUX, the first team in Korea to receive NVIDIA SAC NPN partnership for Omniverse solutions. Using NVIDIA Omniverse as my core tool, I have researched logistics simulation and successfully delivered multiple B2B projects. My development approach centers on key logistics assets and their operational integration with WCS and WMS layers.
 
