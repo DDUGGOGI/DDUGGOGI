@@ -15,12 +15,12 @@ I am the main developer of POLLUX, the first team in Korea to receive NVIDIA SAC
 **1.Meta Quest–based Imitation Learning, Synthetic Dataset Pipeline & Virtual Testbed for Humanoids (2025)**
 <img width="2283" height="1269" alt="스크린샷 2025-11-26 17-09-58" src="https://github.com/user-attachments/assets/b37e05bf-c690-47f7-8235-df9dd85245d7" />
 A project to collect human demonstration data and accelerate synthetic dataset generation for humanoid IL training.<br />
-[Main Tasks]<br />
+**[Main Tasks]**<br />
 Meta Quest motion capture → Unity → Control Server → ROS2 → Isaac Sim humanoid action retargeting
 Trajectory dataset generation for imitation learning
 GR00T/N1-based synthetic dataset generation pipeline
 Virtual testbed for humanoid manipulation & locomotion<br />
-[Technologies]<br />
+**[Technologies]**<br />
 Motion Capture: Meta Quest Link, OpenXR
 Video Processing: Unity Render Streaming, H.264 encoding/decoding (Python)
 Networking: WebRTC over ROS2 bridge, custom UDP/TCP transport
@@ -30,7 +30,7 @@ Dataset: GR00T/N1 synthetic dataset generator, trajectory filtering
 IL: BC, trajectory embedding, smoothing, noise injection
 Visualization: Omniverse motion retargeting
 Languages: Python, ROS2, C#, Unity, JSON/Parquet<br />
-[Engineering Achievements]<br />
+**[Engineering Achievements]**<br />
 Replaced Apple Vision Pro–exclusive imitation learning & teleoperation pipeline with Meta Quest + Unity, removing cost barriers for enterprise clients.
 Built a Dataset Acceleration Pipeline enabling IL/VLA training data generation by a single engineer.
 Designed a multi-stack data flow (Meta Quest → Unity → ROS2 → Isaac Sim), creating a low-cost alternative that significantly accelerates trajectory and synthetic dataset creation.
@@ -39,14 +39,14 @@ This pipeline substantially removed the traditional bottleneck of IL data genera
 **2.Logistics AMR MK3 Development – Pulmuone (2022–2024)**
 <img width="840" height="600" alt="스크린샷 2025-08-26 13-14-52" src="https://github.com/user-attachments/assets/fbbd4170-a2dc-4a49-8015-02bc231faa95" />
 Development and improvement of three AMRs deployed in a live logistics center, following a Sim-to-Field methodology.<br />
-[Main Tasks]<br />
+**[Main Tasks]**<br />
 Jetson-based ROS2 high-level controller + low-level motor driver integration
 Sick LiDAR (front/back), D435F (front/back), IMU, BMS CAN sensor stack
 Physical control considering reducer, 1-ton motors, 300 kg payload (0.2 m/s² accel/dec.)
 Jetson Xavier control-loop irregularity diagnosis & fix
 Task Assignment → Path following → Stacking flow integrated with WES
 Safety layer implementation (LiDAR zone, emergency stop)<br />
-[Technologies]<br />
+**[Technologies]**<br />
 OS/Framework: Ubuntu 20.04/22.04, ROS1 Noetic
 HW Interface: Jetson Xavier, CAN, UART, partial EtherCAT
 Perception: SOS Lab LiDAR SDK, ZED2i, IMU Fusion
@@ -55,7 +55,7 @@ Control: PID, S-curve control, Motor Driver API
 Networking: Socket, TCP ROS Bridge
 Tools: ROS2, Foxglove, Isaac Sim, YOLO, Docker, NGC
 Languages: Python, C++, C, Bash<br />
-[Engineering Achievements]<br />
+**[Engineering Achievements]**<br />
 IMU Drift Mitigation:
  IMU drift accumulated over time and created instability in the AMR’s heading estimation.
  I reduced IMU dependency and re-architected the pose estimation system into a vision-aided structure.
@@ -70,19 +70,19 @@ Jetson Bandwidth Limitation Fix:
 <img width="2115" height="1170" alt="스크린샷 2025-11-27 11-27-12" src="https://github.com/user-attachments/assets/3bc6c1d9-80a5-480a-b773-ad8c10fb9ae2" />
 A complete replication of the real mini-loader’s kinematics and control profile using Omniverse Isaac Sim.
 <br />
-[Main Tasks]<br />
+**[Main Tasks]**<br />
 S-curve motion profile–based virtual MCU (vMCU)
 Joint redesign (fork/lifter/slide) using USD articulations
 Newton/Warp physics tuning for accurate mass/inertia reproduction
 Scenario-based pallet/box flow simulation
 Pre-deployment verification of WES ↔ mini-loader operations<br />
-[Technologies]<br />
+**[Technologies]**<br />
 Isaac Sim 4.5/5.0
 PhysX 5, Isaac Physics
 USD, PhysX Articulation
 Python (Carb/Kit SDK)
 Scenario runner, throughput evaluation tools<br />
-[Engineering Achievements]<br />
+**[Engineering Achievements]**<br />
 Built a scalable physics-offloaded R2S architecture, separating simulation, controller, and mapper responsibilities.
 Fully reproduced inbound → staging → outbound flow inside a Digital Twin.
 Solved the fundamental mismatch between PD-based control in Omniverse and the S-curve real motion profile of industrial mini-loaders.
@@ -94,56 +94,56 @@ Gained deep understanding of 2nd-order spring–damper systems, enabling accurat
 
 **4.Digital Twin Conveyor Control System (2024)**
 A unified simulation integrating conveyor, mini-loader, and AMR behaviors.<br />
-[Main Tasks]<br />
+**[Main Tasks]**<br />
 Conveyor belt velocity/friction/collision modeling
 WES-aligned flow buffering & queueing logic
 Virtual PLC I/O mapping
 JSON-driven no-code world configuration system<br />
-[Technologies]<br />
+**[Technologies]**<br />
 Isaac Sim 4.5/5.0
 PhysX 5, Isaac Physics
 USD articulations
 Python SDK<br />
-[Engineering Achievements]<br />
+**[Engineering Achievements]**<br />
 Validated conveyor system behavior in simulation before hardware integration
 Resolved bottlenecks, accumulation patterns, timing mismatches in advance
 
 **5.Humanoid Reinforcement Learning Environment – LG CNS (2025)**
 <img width="1207" height="666" alt="image (12)" src="https://github.com/user-attachments/assets/8e00d7ef-a590-4a83-bde5-09e129ee2abe" />
 Isaac Lab–based RL pipeline tailored for enterprise humanoid R&D.<br />
-[Main Tasks]<br />
+**[Main Tasks]**<br />
 Joint mapping, dynamics tuning
 Locomotion/balance/reach task design
 Reward shaping, curriculum learning
 Sim-to-Sim and Sim-to-Real calibration
 Custom Isaac Lab RL platform for the client<br />
-[Technologies]<br />
+**[Technologies]**<br />
 Isaac Lab RL, RL Games, PPO
 PhysX articulation
 Python (Isaac Lab API), C++<br />
-[Engineering Achievements]<br />
+**[Engineering Achievements]**<br />
 Built a production-ready humanoid RL training environment from scratch
 Established a foundation for future IL/Synthetic Dataset pipelines
 
 **6.NVIDIA Isaac Sim Robotics Education – KIRIA(Korea Institute for Robot Industry Advancement, 2025)**
 Basic robotics Digital Twin curriculum design & instruction.<br />
-[Achievements]<br />
+**[Achievements]**<br />
 Enabled industry engineers to adopt Omniverse/Isaac technologies
 Expanded domestic Digital Twin ecosystem
 
 **7.Isaac Sim Digital Twin Training – Samsung SDS (2024)**<br />
-[Achievements]<br />
+**[Achievements]**<br />
 Empowered internal Digital Twin TF to independently run Isaac Sim projects
 Accelerated PoC-level understanding and adoption
 
 **8.Nuclear Waste Handling Digital Twin PoC – U.S. Department of Energy (2023)**
 A Digital Twin of gantry crane + AMR cooperation for hazardous waste movement and storage.<br />
-[Technologies]<br />
+**[Technologies]**<br />
 Isaac Sim 4.5
 PhysX 5 (high-mass articulation, sway dynamics)
 USD gantry crane model
 Python, OmniGraph scenario engine<br />
-[Achievements]<br />
+**[Achievements]**<br />
 Enabled full-risk scenario testing without interrupting real DOE operations
 Demonstrated the real industrial applicability of Omniverse in high-hazard facilities
 
