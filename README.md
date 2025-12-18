@@ -14,13 +14,12 @@ I am the main developer of POLLUX, the first team in Korea to receive NVIDIA SAC
 
 **1.Meta Quest–based Imitation Learning, Synthetic Dataset Pipeline & Virtual Testbed for Humanoids (2025)**
 <img width="2283" height="1269" alt="스크린샷 2025-11-26 17-09-58" src="https://github.com/user-attachments/assets/b37e05bf-c690-47f7-8235-df9dd85245d7" />
-A project to collect human demonstration data and accelerate synthetic dataset generation for humanoid IL training.
-<br /><br />
+A project to collect human demonstration data and accelerate synthetic dataset generation for humanoid IL training.<br />
 [Main Tasks]
 Meta Quest motion capture → Unity → Control Server → ROS2 → Isaac Sim humanoid action retargeting
 Trajectory dataset generation for imitation learning
 GR00T/N1-based synthetic dataset generation pipeline
-Virtual testbed for humanoid manipulation & locomotion
+Virtual testbed for humanoid manipulation & locomotion<br />
 [Technologies]
 Motion Capture: Meta Quest Link, OpenXR
 Video Processing: Unity Render Streaming, H.264 encoding/decoding (Python)
@@ -30,7 +29,7 @@ Simulation: Isaac Sim humanoid motion mapping
 Dataset: GR00T/N1 synthetic dataset generator, trajectory filtering
 IL: BC, trajectory embedding, smoothing, noise injection
 Visualization: Omniverse motion retargeting
-Languages: Python, ROS2, C#, Unity, JSON/Parquet
+Languages: Python, ROS2, C#, Unity, JSON/Parquet<br />
 [Engineering Achievements]
 Replaced Apple Vision Pro–exclusive imitation learning & teleoperation pipeline with Meta Quest + Unity, removing cost barriers for enterprise clients.
 Built a Dataset Acceleration Pipeline enabling IL/VLA training data generation by a single engineer.
