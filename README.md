@@ -100,9 +100,9 @@ WES-aligned flow buffering & queueing logic
 Virtual PLC I/O mapping
 JSON-driven no-code world configuration system<br />
 [Technologies]<br />
-Isaac Sim 4.5/5.0<br />
-PhysX 5, Isaac Physics<br />
-USD articulations<br />
+Isaac Sim 4.5/5.0
+PhysX 5, Isaac Physics
+USD articulations
 Python SDK<br />
 [Engineering Achievements]<br />
 Validated conveyor system behavior in simulation before hardware integration
@@ -118,8 +118,8 @@ Reward shaping, curriculum learning
 Sim-to-Sim and Sim-to-Real calibration
 Custom Isaac Lab RL platform for the client<br />
 [Technologies]<br />
-Isaac Lab RL, RL Games, PPO<br />
-PhysX articulation<br />
+Isaac Lab RL, RL Games, PPO
+PhysX articulation
 Python (Isaac Lab API), C++<br />
 [Engineering Achievements]<br />
 Built a production-ready humanoid RL training environment from scratch
