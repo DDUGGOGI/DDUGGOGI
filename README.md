@@ -72,6 +72,8 @@ Jetson Bandwidth Limitation Fix:
 
 **3.Mini-loader Digital Twin Real-to-Sim (R2S) for Virtual Inbound/Outbound – Pulmuone (2024)**
 <img width="2115" height="1170" alt="스크린샷 2025-11-27 11-27-12" src="https://github.com/user-attachments/assets/3bc6c1d9-80a5-480a-b773-ad8c10fb9ae2" />
+<img width="2298" height="1286" alt="스크린샷 2025-12-22 11-37-58" src="https://github.com/user-attachments/assets/85e7f295-7ff2-4e80-a394-c7d57bfff3e4" />
+
 A complete replication of the real mini-loader’s kinematics and control profile using Omniverse Isaac Sim.
 <br />
 **[Main Tasks]**<br />
