@@ -38,6 +38,8 @@ This pipeline substantially removed the traditional bottleneck of IL data genera
 
 **2.Logistics AMR MK3 Development – Pulmuone (2022–2024)**
 <img width="840" height="600" alt="스크린샷 2025-08-26 13-14-52" src="https://github.com/user-attachments/assets/fbbd4170-a2dc-4a49-8015-02bc231faa95" />
+<img width="2298" height="1286" alt="스크린샷 2025-12-22 11-35-32" src="https://github.com/user-attachments/assets/764a567a-7cc7-4e78-9de0-0715a892aa48" />
+
 Development and improvement of three AMRs deployed in a live logistics center, following a Sim-to-Field methodology.<br />
 **[Main Tasks]**<br />
 Jetson-based ROS2 high-level controller + low-level motor driver integration
