@@ -12,7 +12,7 @@ Simulation (Omniverse, Isaac Sim, USD, PhysX) · Robotics (ROS2, Jetson, Control
 Digital Twin Engineer - Digital Twin Division
 I am the main developer of POLLUX, the first team in Korea to receive NVIDIA SAC NPN partnership for Omniverse solutions. Using NVIDIA Omniverse as my core tool, I have researched logistics simulation and successfully delivered multiple B2B projects. My development approach centers on key logistics assets and their operational integration with WCS and WMS layers.
 
-**1.Meta Quest–based Imitation Learning, Synthetic Dataset Pipeline & Virtual Testbed for Humanoids (2025)**
+**Meta Quest–based Imitation Learning, Synthetic Dataset Pipeline & Virtual Testbed for Humanoids (2025)**
 <img width="2283" height="1269" alt="스크린샷 2025-11-26 17-09-58" src="https://github.com/user-attachments/assets/b37e05bf-c690-47f7-8235-df9dd85245d7" />
 <img width="1414" height="1291" alt="스크린샷 2025-12-18 16-10-10" src="https://github.com/user-attachments/assets/c02e7bb0-8b1f-4165-9b3a-7ae37bdf9571" />
 
@@ -38,7 +38,43 @@ Built a Dataset Acceleration Pipeline enabling IL/VLA training data generation b
 Designed a multi-stack data flow (Meta Quest → Unity → ROS2 → Isaac Sim), creating a low-cost alternative that significantly accelerates trajectory and synthetic dataset creation.
 This pipeline substantially removed the traditional bottleneck of IL data generation for humanoid learning.
 
-**2.Logistics AMR MK3 Development – Pulmuone (2022–2024)**
+**UR10 Reach: RL-based Precision Grasping for Physics-Constrained Manipulation (2025)**
+<img width="839" height="1332" alt="image" src="https://github.com/user-attachments/assets/995df271-3f3e-44dd-b889-629cb2079253" />
+
+A project that replaces traditional inverse kinematics (IK)–based manipulation with a reinforcement learning (RL) policy to solve physics-constrained suction grasping in Isaac Sim. The learned policy achieves precise vertical alignment required by suction grippers, enabling reliable grasping under strict physical constraints.<br />
+<br />
+
+[Main Tasks]<br />
+Isaac Lab RL training → Ground Truth validation → ROS2 deployment → Real-world transfer<br />
+PPO-based RL policy training for 6-DOF UR10 joint control with orientation constraints<br />
+Dual deployment architecture: Isaac Lab automatic managers vs ROS2 manual implementation<br />
+Ground Truth validation framework for step-by-step observation/action comparison<br />
+Unified socket-based command interface (send_target.py) for training and deployment<br />
+World-to-Base coordinate transformation with ROS2 TF2 integration<br />
+Production-ready inference node with TCP and ROS2 dual communication channels<br />
+<br />
+
+[Technologies]<br />
+Reinforcement Learning: Isaac Lab (NVIDIA Omniverse), PPO, RSL-RL (ETH Zurich)<br />
+Robot Control: Universal Robots UR10 with suction gripper, ROS2 (Humble), 30Hz control loop<br />
+Networking: TCP socket server (JSON protocol), ROS2 topic pub/sub, TF2 transforms<br />
+Middleware: Custom observation space (25D), normalized 6D action space<br />
+Simulation: Isaac Sim (PhysX), IsaacArticulationController, UR10 USD model<br />
+Math & Transforms: Quaternion math, world↔base frame transforms, EMA velocity filtering<br />
+Dataset: PyTorch checkpoints (.pt), actor–critic state dict extraction<br />
+Visualization: Isaac Lab visualization tools, ROS2 RViz joint monitoring<br />
+Languages: Python, PyTorch, C++, YAML/JSON, ROS2 message definitions<br />
+<br />
+
+[Engineering Achievements]<br />
+Replaced IK-based manipulation with an RL policy, improving grasp success rate from 20% to over 95% by explicitly optimizing both position and orientation under physics constraints.<br />
+Built a Ground Truth Validation Framework using Isaac Lab as a reference, reducing ROS2 deployment bugs by over 90% through step-by-step log comparison of observations, actions, and joint commands.<br />
+Designed a dual-communication architecture (TCP socket + ROS2 topics) with a unified command client, enabling seamless A/B testing between training and deployment environments without code duplication.<br />
+Manually reimplemented Isaac Lab’s automatic managers (Command, Observation, Action) for ROS2 deployment with numerical consistency up to six decimal places.<br />
+Resolved a critical action-timing mismatch issue that improved control stability by 85%, preventing oscillations during inference.<br />
+Produced comprehensive architecture and debugging documentation, reducing onboarding time for future RL deployment projects by approximately 70%.<br />
+
+**Logistics AMR MK3 Development – Pulmuone (2022–2024)**
 <img width="840" height="600" alt="스크린샷 2025-08-26 13-14-52" src="https://github.com/user-attachments/assets/fbbd4170-a2dc-4a49-8015-02bc231faa95" />
 <img width="2298" height="1286" alt="스크린샷 2025-12-22 11-35-32" src="https://github.com/user-attachments/assets/764a567a-7cc7-4e78-9de0-0715a892aa48" />
 
@@ -70,7 +106,7 @@ Jetson Bandwidth Limitation Fix:
  I separated concerns by moving all image streams to a dedicated AI inference module, leaving Jetson responsible only for high-level control (pathing, sensor fusion, WES communication).
  This architecture later became the basis for how I design scalable Real-to-Sim and large-scale simulation pipelines.
 
-**3.Mini-loader Digital Twin Real-to-Sim (R2S) for Virtual Inbound/Outbound – Pulmuone (2024)**
+**Mini-loader Digital Twin Real-to-Sim (R2S) for Virtual Inbound/Outbound – Pulmuone (2024)**
 <img width="2115" height="1170" alt="스크린샷 2025-11-27 11-27-12" src="https://github.com/user-attachments/assets/3bc6c1d9-80a5-480a-b773-ad8c10fb9ae2" />
 <img width="2298" height="1286" alt="스크린샷 2025-12-22 11-37-58" src="https://github.com/user-attachments/assets/85e7f295-7ff2-4e80-a394-c7d57bfff3e4" />
 
@@ -98,7 +134,7 @@ PhysX PD controllers
 realistic force limits & mechanical constraints
 Gained deep understanding of 2nd-order spring–damper systems, enabling accurate replication of physical control behavior.
 
-**4.Digital Twin Conveyor Control System (2024)**
+**Digital Twin Conveyor Control System (2024)**
 A unified simulation integrating conveyor, mini-loader, and AMR behaviors.<br />
 **[Main Tasks]**<br />
 Conveyor belt velocity/friction/collision modeling
@@ -114,7 +150,7 @@ Python SDK<br />
 Validated conveyor system behavior in simulation before hardware integration
 Resolved bottlenecks, accumulation patterns, timing mismatches in advance
 
-**5.Humanoid Reinforcement Learning Environment – LG CNS (2025)**
+**Humanoid Reinforcement Learning Environment – LG CNS (2025)**
 <img width="1207" height="666" alt="image (12)" src="https://github.com/user-attachments/assets/8e00d7ef-a590-4a83-bde5-09e129ee2abe" />
 Isaac Lab–based RL pipeline tailored for enterprise humanoid R&D.<br />
 **[Main Tasks]**<br />
@@ -131,7 +167,7 @@ Python (Isaac Lab API), C++<br />
 Built a production-ready humanoid RL training environment from scratch
 Established a foundation for future IL/Synthetic Dataset pipelines
 
-**6.NVIDIA Isaac Sim Robotics Education – KIRIA(Korea Institute for Robot Industry Advancement, 2025)**
+**NVIDIA Isaac Sim Robotics Education – KIRIA(Korea Institute for Robot Industry Advancement, 2025)**
 Basic robotics Digital Twin curriculum design & instruction.<br />
 **[Achievements]**<br />
 Enabled industry engineers to adopt Omniverse/Isaac technologies
@@ -142,7 +178,7 @@ Expanded domestic Digital Twin ecosystem
 Empowered internal Digital Twin TF to independently run Isaac Sim projects
 Accelerated PoC-level understanding and adoption
 
-**8.Nuclear Waste Handling Digital Twin PoC – U.S. Department of Energy (2023)**
+**Nuclear Waste Handling Digital Twin PoC – U.S. Department of Energy (2023)**
 A Digital Twin of gantry crane + AMR cooperation for hazardous waste movement and storage.<br />
 **[Technologies]**<br />
 Isaac Sim 4.5
