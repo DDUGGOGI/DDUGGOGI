@@ -39,12 +39,12 @@ Designed a multi-stack data flow (Meta Quest → Unity → ROS2 → Isaac Sim), 
 This pipeline substantially removed the traditional bottleneck of IL data generation for humanoid learning.
 
 **UR10 Reach: RL-based Precision Grasping for Physics-Constrained Manipulation (2025)**
+<img width="1716" height="1158" alt="image" src="https://github.com/user-attachments/assets/f33ff6ac-911f-42ce-8bfb-09e909826f87" />
+
 <img width="839" height="1332" alt="image" src="https://github.com/user-attachments/assets/995df271-3f3e-44dd-b889-629cb2079253" />
 
 A project that replaces traditional inverse kinematics (IK)–based manipulation with a reinforcement learning (RL) policy to solve physics-constrained suction grasping in Isaac Sim. The learned policy achieves precise vertical alignment required by suction grippers, enabling reliable grasping under strict physical constraints.<br />
-<br />
-
-[Main Tasks]<br />
+**[Main Tasks]**<br />
 Isaac Lab RL training → Ground Truth validation → ROS2 deployment → Real-world transfer<br />
 PPO-based RL policy training for 6-DOF UR10 joint control with orientation constraints<br />
 Dual deployment architecture: Isaac Lab automatic managers vs ROS2 manual implementation<br />
@@ -52,9 +52,7 @@ Ground Truth validation framework for step-by-step observation/action comparison
 Unified socket-based command interface (send_target.py) for training and deployment<br />
 World-to-Base coordinate transformation with ROS2 TF2 integration<br />
 Production-ready inference node with TCP and ROS2 dual communication channels<br />
-<br />
-
-[Technologies]<br />
+**[Technologies]**<br />
 Reinforcement Learning: Isaac Lab (NVIDIA Omniverse), PPO, RSL-RL (ETH Zurich)<br />
 Robot Control: Universal Robots UR10 with suction gripper, ROS2 (Humble), 30Hz control loop<br />
 Networking: TCP socket server (JSON protocol), ROS2 topic pub/sub, TF2 transforms<br />
@@ -64,9 +62,7 @@ Math & Transforms: Quaternion math, world↔base frame transforms, EMA velocity 
 Dataset: PyTorch checkpoints (.pt), actor–critic state dict extraction<br />
 Visualization: Isaac Lab visualization tools, ROS2 RViz joint monitoring<br />
 Languages: Python, PyTorch, C++, YAML/JSON, ROS2 message definitions<br />
-<br />
-
-[Engineering Achievements]<br />
+**[Engineering Achievements]**<br />
 Replaced IK-based manipulation with an RL policy, improving grasp success rate from 20% to over 95% by explicitly optimizing both position and orientation under physics constraints.<br />
 Built a Ground Truth Validation Framework using Isaac Lab as a reference, reducing ROS2 deployment bugs by over 90% through step-by-step log comparison of observations, actions, and joint commands.<br />
 Designed a dual-communication architecture (TCP socket + ROS2 topics) with a unified command client, enabling seamless A/B testing between training and deployment environments without code duplication.<br />
