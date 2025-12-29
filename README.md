@@ -1,5 +1,6 @@
 Physical AI
-<img width="1082" height="2159" alt="image" src="https://github.com/user-attachments/assets/aab8342b-47b5-45e8-aff4-ba057169b069" />
+<img width="2049" height="1073" alt="image" src="https://github.com/user-attachments/assets/94a0edad-dd56-4405-88be-08bcb1f41fac" />
+
 
 
 **Executive Summary**
