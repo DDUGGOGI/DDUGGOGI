@@ -167,6 +167,8 @@ Built a production-ready humanoid RL training environment from scratch
 Established a foundation for future IL/Synthetic Dataset pipelines
 
 **NVIDIA Isaac Sim Robotics Education – KIRIA(Korea Institute for Robot Industry Advancement, 2025)**
+<img width="436" height="973" alt="image" src="https://github.com/user-attachments/assets/5ad743af-2887-460b-a996-7d39659a0f3b" />
+
 Basic robotics Digital Twin curriculum design & instruction.<br />
 **[Achievements]**<br />
 Enabled industry engineers to adopt Omniverse/Isaac technologies
