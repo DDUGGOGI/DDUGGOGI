@@ -76,6 +76,8 @@ Produced comprehensive architecture and debugging documentation, reducing onboar
 **Logistics AMR MK3 Development – Pulmuone (2022–2024)**
 <img width="840" height="600" alt="스크린샷 2025-08-26 13-14-52" src="https://github.com/user-attachments/assets/fbbd4170-a2dc-4a49-8015-02bc231faa95" />
 <img width="2298" height="1286" alt="스크린샷 2025-12-22 11-35-32" src="https://github.com/user-attachments/assets/764a567a-7cc7-4e78-9de0-0715a892aa48" />
+<img width="816" height="1170" alt="image (5)" src="https://github.com/user-attachments/assets/f34f7d22-d8e0-44e4-93a1-2f8f5fd020e4" />
+
 
 Development and improvement of three AMRs deployed in a live logistics center, following a Sim-to-Field methodology.<br />
 **[Main Tasks]**<br />
