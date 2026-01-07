@@ -6,6 +6,8 @@ Physical AI
 
 
 **Executive Summary**
+<img width="1754" height="717" alt="image" src="https://github.com/user-attachments/assets/37c04f8a-b791-4d33-ab9f-447d961cae46" />
+
 The industry is entering a major transition in which the entire physical world is being reorganized into a trainable structure powered by WFM, RFM, and AI Agents. I aim to stand at the forefront of this shift by helping customers implement Physical AI in real industrial environments using NVIDIA Omniverse. My experience connecting AMRs, mini-loaders, conveyors, humanoids, Digital Twins, and RL/IL pipelines into a single end-to-end cycle has given me a deep engineering understanding of how to integrate real-world control, simulation, and AI learning. I have repeatedly identified and solved fundamental mismatches between physical systems, simulation behavior, and AI training, building scalable architectures across OpenUSD, Isaac Sim/Lab, Synthetic Data, and Jetson deployment. Through extensive collaboration with major Korean enterprises and government institutions, I have also gained a practical understanding of the organizational dynamics, decision-making patterns, and PoC→Pilot→Deployment bottlenecks they face when adopting Omniverse. This insight allows me to support customers not only technically but strategically. I am deeply passionate about creatively solving the complex challenges of Physical AI, and I hope to contribute at NVIDIA KOREA where this historic transformation of industry is being built at the front line.
 
 **Detailed Portfolio**
