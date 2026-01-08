@@ -1,4 +1,4 @@
-Physical AI
+**Physical AI**
 <img width="2929" height="1316" alt="image" src="https://github.com/user-attachments/assets/0808a35d-1123-422f-a54d-3da9584b8bf5" />
 
 
