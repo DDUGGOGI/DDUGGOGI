@@ -13,11 +13,10 @@ Physical AI
 
 The industry is entering a major transition in which the entire physical world is being reorganized into a trainable structure powered by WFM, RFM, and AI Agents. I aim to stand at the forefront of this shift by helping customers implement Physical AI in real industrial environments using NVIDIA Omniverse. My experience connecting AMRs, mini-loaders, conveyors, humanoids, Digital Twins, and RL/IL pipelines into a single end-to-end cycle has given me a deep engineering understanding of how to integrate real-world control, simulation, and AI learning. I have repeatedly identified and solved fundamental mismatches between physical systems, simulation behavior, and AI training, building scalable architectures across OpenUSD, Isaac Sim/Lab, Synthetic Data, and Jetson deployment. Through extensive collaboration with major Korean enterprises and government institutions, I have also gained a practical understanding of the organizational dynamics, decision-making patterns, and PoC→Pilot→Deployment bottlenecks they face when adopting Omniverse. This insight allows me to support customers not only technically but strategically. I am deeply passionate about creatively solving the complex challenges of Physical AI, and I hope to contribute at NVIDIA KOREA where this historic transformation of industry is being built at the front line.
 
+
 **Core Digital Twin Strategy**
 - **[📘 00_Digital_Twin_Strategy.md](./00_Digital_Twin_Strategy.md)**: **Master Strategy Document** (Full Detail)
-- **[🏗️ 01_Digital_Twin_Architecture.md](./01_Digital_Twin_Architecture.md)**: 3-Layer Architecture (Physical/Virtual/Intelligence).
-- **[🚀 02_Sim_to_Real_Pipeline.md](./02_Sim_to_Real_Pipeline.md)**: Solving the Reality Gap & Progressive Deployment.
-- **[🤝 03_Human_Centric_AI_Training.md](./03_Human_Centric_AI_Training.md)**: Human-in-the-Loop & VR-based Data Generation.
+- **[🏗️ 01_Digital_Twin_Architecture.md](./01_Digital_Twin_10_Architecture.md)**: 3-Layer Architecture (Physical/Virtual/Intelligence).
 
 **SKILL**
 Simulation (Omniverse, Isaac Sim, USD, PhysX) · Robotics (ROS2, Jetson, Control) · AI for Robotics (RL/IL, GR00T, Synthetic Data) · Vision (YOLO, TensorRT) · Motion Capture (Meta Quest, Unity) · Logistics Automation (WCS/WMS Integration) · Embedded & System Architecture Design
