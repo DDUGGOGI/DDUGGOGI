@@ -172,24 +172,80 @@ Physical AI, 로봇 시뮬레이션, 디지털 트윈 분야에서 3년간(2022-
 
 ---
 
-### 5. AI 모델 최적화 & 배포 ⭐⭐⭐⭐
+### 5. 멀티 모델 A2A 시스템 & AI 인프라 ⭐⭐⭐⭐⭐
 
 **전문 기술**:
-- TensorRT 최적화 (25배 가속)
-- 모델 양자화 (FP32 → FP16 → INT8)
-- NVIDIA NIM 배포
-- 엣지 디바이스 최적화 (Jetson)
+- **DGX 기반 멀티 모델 오케스트레이션**
+- **Agent-to-Agent (A2A) 아키텍처 설계**
+- **LangGraph State Machine** (복잡한 워크플로우 관리)
+- **MCP (Model Context Protocol)** 서버 통합
+- **FastAPI + WebSocket** 실시간 통신
+
+**시스템 아키텍처**:
+```
+사용자 입력 (Frontend)
+    ↓
+WebSocket (/ws/chat/{chat_id})
+    ↓
+Backend (FastAPI)
+    ↓
+ChatAgent.query()
+    ↓
+LangGraph State Machine
+    ↓
+Supervisor Agent (GPT-OSS-120B)
+    ↓
+Tool Calling 결정
+    ↓
+┌──────────┬──────────┬──────────┐
+│  MCP     │  MCP     │  MCP     │
+│ Server   │ Server   │ Server   │
+└───┬─────┴────┬─────┴────┬──────┘
+    │          │          │
+┌───▼─────┐ ┌──▼───┐ ┌────▼─────┐
+│DeepSeek │ │Qwen3 │ │Qwen2.5-VL│
+│-Coder   │ │Embed │ │          │
+└─────────┘ └──────┘ └──────────┘
+```
+
+**핵심 구성 요소**:
+```yaml
+Supervisor Agent:
+  - 모델: GPT-OSS-120B (오픈소스 LLM)
+  - 역할: 태스크 분해, 모델 선택, 워크플로우 조정
+  - 기술: LangGraph State Machine
+
+Specialized Models (MCP Server):
+  1. DeepSeek-Coder
+     - 역할: 코드 생성, 디버깅, 리팩토링
+     - 통신: MCP Protocol
+  
+  2. Qwen3 Embed
+     - 역할: 텍스트 임베딩, RAG 검색
+     - 통신: MCP Protocol
+  
+  3. Qwen2.5-VL
+     - 역할: Vision-Language 멀티모달
+     - 통신: MCP Protocol
+
+Infrastructure:
+  - Hardware: DGX (Multi-GPU)
+  - Backend: FastAPI + WebSocket
+  - State Management: LangGraph
+  - Protocol: MCP (Model Context Protocol)
+```
 
 **주요 성과**:
-- ✅ 추론 속도: 200ms → 8ms (25배)
-- ✅ 하드웨어 비용: 50% 절감
-- ✅ 실시간 제어: 30Hz 달성
-- ✅ 정확도 손실: 0.2%p (무시 가능)
+- ✅ **멀티 모델 협업**: 3개 전문 모델 동시 운영
+- ✅ **실시간 통신**: WebSocket 기반 <50ms 응답
+- ✅ **확장 가능**: MCP 서버 플러그인 구조
+- ✅ **워크플로우 자동화**: LangGraph State Machine
+- ✅ **DGX 최적화**: Multi-GPU 리소스 효율적 분배
 
 **실전 프로젝트**:
-- NIM 기반 모델 서빙 시스템
-- Vision-Language 모델 최적화 (L40S)
-- Jetson NX 실시간 추론
+- DGX 기반 A2A 시스템 (GPT-OSS-120B + 3개 전문 모델)
+- MCP 프로토콜 서버 구축
+- LangGraph 복잡 워크플로우 설계
 
 ---
 
