@@ -17,7 +17,7 @@ The industry is entering a major transition in which the entire physical world i
 **Core Digital Twin Strategy**
 - **[📘 00_Digital_Twin_Strategy.md](./00_Digital_Twin_Strategy.md)**: **Master Strategy Document** (Full Detail)
 - **[🏗️ 01_Digital_Twin_10_Architecture.md](./01_Digital_Twin_10_Architecture.md)**: **10 Core Tech Categories** & Integrated ROI Analysis.
-- **[🚀 02_Comprehensive_Portfolio.md](./03_Comprehensive_Portfolio.md)**: **Engineering Portfolio** (Project Details & Tech Stack)
+- **[🚀 02_Comprehensive_Portfolio.md](./02_Comprehensive_Portfolio.md)**: **Engineering Portfolio** (Project Details & Tech Stack)
 
 **SKILL**
 Simulation (Omniverse, Isaac Sim, USD, PhysX) · Robotics (ROS2, Jetson, Control) · AI for Robotics (RL/IL, GR00T, Synthetic Data) · Vision (YOLO, TensorRT) · Motion Capture (Meta Quest, Unity) · Logistics Automation (WCS/WMS Integration) · Embedded & System Architecture Design
