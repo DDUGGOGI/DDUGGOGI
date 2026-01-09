@@ -52,6 +52,7 @@ Physical AI, 로봇 시뮬레이션, 디지털 트윈 분야에서 3년간(2022-
 ## 💼 Core Competencies
 
 ### 1. 디지털 트윈 & 물리 시뮬레이션 ⭐⭐⭐⭐⭐
+<img width="2294" height="1277" alt="스크린샷 2025-12-18 16-09-46" src="https://github.com/user-attachments/assets/7e59a697-f84e-40b6-ac2d-cd3b80a3fc6f" />
 
 **접근 방식 - 아키텍처 중심의 유연한 시스템 설계**:
 - **아키텍처 우선**: 도구는 변하지만, 재사용 가능한 유연한 구조 설계
@@ -109,6 +110,7 @@ Physical AI, 로봇 시뮬레이션, 디지털 트윈 분야에서 3년간(2022-
 ---
 
 ### 2. 로봇 AI & 학습 ⭐⭐⭐⭐⭐
+<img width="2364" height="1247" alt="스크린샷 2025-11-26 17-13-33" src="https://github.com/user-attachments/assets/b89e1b70-83a4-4a3e-9164-e7c63e8d9146" />
 
 **전문 기술**:
 - 모방학습 (Imitation Learning) 파이프라인 구축
@@ -129,6 +131,7 @@ Physical AI, 로봇 시뮬레이션, 디지털 트윈 분야에서 3년간(2022-
 ---
 
 ### 3. 물류 자동화 시스템 ⭐⭐⭐⭐⭐
+<img width="1759" height="1104" alt="스크린샷 2025-12-18 16-08-35" src="https://github.com/user-attachments/assets/1cfd5650-7698-4c59-b4c9-21a9644f461a" />
 
 **전문 기술**:
 - AMR (Autonomous Mobile Robot) 개발 및 운영
@@ -191,6 +194,7 @@ Physical AI, 로봇 시뮬레이션, 디지털 트윈 분야에서 3년간(2022-
 ---
 
 ### 6. VLA 합성데이터 생성 ⭐⭐⭐⭐
+<img width="914" height="1639" alt="image" src="https://github.com/user-attachments/assets/de9fb9c6-3a6d-4f7b-9370-90ede3f9a826" />
 
 **전문 기술**:
 - VLA (Vision-Language-Action) 학습용 합성데이터 생성 시스템
