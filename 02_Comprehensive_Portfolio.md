@@ -1442,18 +1442,7 @@ AI/ML (RL, Imitation)
 
 ---
 
-## 📞 Contact & Links
-
-### 문서 저장소
-
-- **지식 베이스**: `/home/pollux-u/Downloads/notion_md/knowledge_base/`
-- **총 문서 수**: 100개+
-- **주요 문서**:
-  - [10대 카테고리 통합 전략](10_CATEGORIES_STRATEGY.md)
-  - [디지털 트윈 전략 Part 1-3](DIGITAL_TWIN_STRATEGY_Part1.md)
-  - [지식 베이스 아키텍처](ARCHITECTURE_STRATEGY.md)
-  - [AI 에이전트 가이드](AI_AGENT_GUIDE.md)
-
+## Contact & Links
 ### 기술 스택 요약
 
 ```
