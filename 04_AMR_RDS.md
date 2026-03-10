@@ -123,31 +123,31 @@ flowchart LR
 
 ---
 
-## 6. 2026 업무 전체 구조 (cmd_vel 소스·모드)
+## 6. 구조 (cmd_vel 소스·모드)
 
 ```mermaid
 flowchart TB
-  subgraph inputs["입력/모드"]
-    USER[사용자 목표 / Rviz]
+  subgraph inputs["입력 모드"]
+    USER[사용자 목표 Rviz]
     TRACK[담당자 추적 ON]
     DOCK_ACT[DockRobot 액션]
   end
 
-  subgraph goal_sources["목표·pose 소스"]
-    USER --> NAV_GOAL[Nav2 목표\n수동/Rviz]
-    TRACK --> FG[follow_goal_node\n/target_person_pose → map → 목표]
-    DOCK_ACT --> DOCK_SRV[opennav_docking\n/detected_dock_pose]
+  subgraph goal_sources["목표 pose 소스"]
+    USER --> NAV_GOAL[Nav2 목표 수동]
+    TRACK --> FG[follow_goal_node]
+    DOCK_ACT --> DOCK_SRV[opennav_docking]
   end
 
   subgraph nav2["Nav2"]
     BT[bt_navigator]
     NAV_GOAL --> BT
     FG -->|NavigateToPose| BT
-    BT --> CMD[/cmd_vel]
+    BT --> CMD[cmd_vel]
   end
 
   subgraph docking["도킹 시"]
-    APRIL[AprilTag → april_bridge]
+    APRIL[AprilTag april_bridge]
     APRIL --> DOCK_SRV
     DOCK_SRV --> CMD
   end
@@ -161,7 +161,7 @@ flowchart TB
 
 ---
 
-## 7. 2026 업무 타임라인 (개념)
+## 7. 2026 개발발 타임라인 (개념)
 
 ```mermaid
 gantt
