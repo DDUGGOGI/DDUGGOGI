@@ -6,7 +6,7 @@
 산업계는 전 세계의 모든 물리적 요소가 WFM, RFM, AI 에이전트로 구동되는 훈련 가능한 구조로 재편되는 대전환기에 진입하고 있습니다. 저는 NVIDIA Omniverse를 활용하여 실제 산업 현장에 Physical AI를 구현함으로써 이러한 변화의 최전선에 서고자 합니다. AMR, 미니 로더, 컨베이어, 휴머노이드, Digital Twin, RL/IL 파이프라인을 하나의 End-to-End 사이클로 연결한 경험을 통해 실제 제어, 시뮬레이션, AI 학습을 통합하는 엔지니어링에 대한 깊은 이해를 갖추게 되었습니다. 물리 시스템, 시뮬레이션 동작, AI 학습 간의 근본적인 불일치를 반복적으로 식별하고 해결하며, OpenUSD, Isaac Sim/Lab, 합성 데이터, Jetson 배포를 아우르는 확장 가능한 아키텍처를 구축해왔습니다. 국내 주요 기업 및 공공기관과의 협업을 통해 Omniverse 도입 시 직면하는 조직 역학, 의사결정 패턴, PoC→Pilot→Deployment 단계의 병목 현상에 대한 실질적인 이해도 쌓았습니다. 이러한 통찰력을 바탕으로 고객을 기술적으로뿐만 아니라 전략적으로 지원할 수 있습니다. 저는 Physical AI의 복잡한 문제를 창의적으로 해결하는 데 깊은 열정을 가지고 있으며, 산업의 역사적 변혁이 이루어지는 최전선인 NVIDIA KOREA에서 기여하고 싶습니다.
 
 - **[🚀 02_Comprehensive_Portfolio.md](./02_Comprehensive_Portfolio.md)**: **엔지니어링 포트폴리오** (프로젝트 상세 및 기술 스택)
-- **[🚀 AMR_RDS.md](./04_AMR_RDS.md)**: **AMR RDS 개발**
+- **[🚀 AMR_RDS.md](./04_AMR_RDS.md)**: **AMR RDS 개발**<br />
 **SKILL**
 Simulation (Omniverse, Isaac Sim, USD, PhysX) · Robotics (ROS2, Jetson, Control) · AI for Robotics (RL/IL, GR00T, Synthetic Data) · Vision (YOLO, TensorRT) · Motion Capture (Meta Quest, Unity) · Logistics Automation (WCS/WMS Integration) · Embedded & System Architecture Design
 
