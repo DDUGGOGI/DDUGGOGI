@@ -139,6 +139,49 @@ flowchart TB
     L2 -.-> L3
 ```
 
+### 4.1 Mermaid: 저차원 정렬 모드 진입 “계약” 게이팅
+
+```mermaid
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#2d2d2d', 'primaryTextColor':'#f0f0f0', 'primaryBorderColor':'#555', 'lineColor':'#888' }}}%%
+flowchart TB
+    REQ["정렬 모드 진입 요청"] --> C{"계약 통과?"}
+    C -->|예| ON["저차원 정렬 모드 활성\n(DOF 감소: yaw-first or funnel)"]
+    C -->|아니오| REPLAN["Nav2로 프리 포즈 재정규화\n(진입 조건 다시 맞추기)"]
+    ON --> SAFE["충돌 안전 접근\n(팔 reach envelope + keep-out)"]
+    SAFE --> GATE["마지막 게이팅\n근접/접촉/힘(전류)"]
+    GATE --> OK["픽 성공 + 플레이스 안착\n(오차 예산 내)"]
+```
+
+### 4.2 Mermaid: 플릿 규모의 “검증 폭발” vs 제약 기반 “리스크 압축”
+
+```mermaid
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#2d2d2d', 'primaryTextColor':'#f0f0f0', 'primaryBorderColor':'#555', 'lineColor':'#888' }}}%%
+flowchart LR
+    subgraph VAR["독립 변수 증가(차원의 저주)"]
+        V1["박스 포즈/형상/라벨/가림"]
+        V2["마찰/슬립/접촉 컴플라이언스"]
+        V3["AMR 베이스 드리프트 + 지터"]
+        V4["랙/컨베이어 주변 클러터"]
+    end
+
+    VAR --> FAIL["실패 패턴 증가"]
+
+    subgraph PER["인지(마커/비전) 중심 접근"]
+        P1["현장별 튜닝/검증/캘리브레이션"]
+        P2["유지보수 자산화 + 예외 상황 확장"]
+    end
+
+    FAIL --> PER --> OVER["유지보수 비용 폭발"]
+
+    subgraph CON["제약 기반 접근(저차원 수렴)"]
+        C1["프리 포즈 계약(진입 조건)"]
+        C2["DOF 감소 정렬 모드(순차 제어/통로 제약)"]
+        C3["마지막 확인 게이팅(접촉/힘)"]
+    end
+
+    CON --> RISK["리스크를\n파라미터/통계로 압축"]
+```
+
 ---
 
 ## 5) DOF 감소 설계(엔지니어링 계약)
@@ -198,6 +241,28 @@ flowchart TB
 - 폴백/재정렬 트리거 빈도
 
 결과적으로 “현장 유지보수 혼돈”을 시뮬레이션에서 **통계적으로 압축 가능한 리스크 모델**로 바꿀 수 있다.
+
+### 7.1 Mermaid: Isaac Sim 몬테카를로 캠페인(입력 분포 → 지표)
+
+```mermaid
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#2d2d2d', 'primaryTextColor':'#f0f0f0', 'primaryBorderColor':'#555', 'lineColor':'#888' }}}%%
+flowchart TB
+    subgraph IN["시뮬 입력 분포"]
+        I1["AMR 초기 오차(x,y,yaw)"]
+        I2["박스 포즈 분포(위치/회전/높이)"]
+        I3["마찰/슬립 파라미터"]
+        I4["제어 지연 + 지터 + 엔코더 노이즈"]
+        I5["접촉 컴플라이언스/백래시"]
+    end
+
+    IN --> CHECK["진입 계약 체크\n(충돌 안전 + DOF 감소 모드 조건)"]
+    CHECK --> MET["지표 집계"]
+    MET --> S1["픽 성공률"]
+    MET --> S2["플레이스 오차(mm)"]
+    MET --> S3["충돌/근접 안전 빈도"]
+    MET --> S4["완료 시간"]
+    MET --> S5["폴백/재정렬 트리거 빈도"]
+```
 
 ---
 
