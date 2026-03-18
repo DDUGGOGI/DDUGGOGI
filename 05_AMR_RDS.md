@@ -350,7 +350,59 @@ flowchart LR
 
 ---
 
-## 10. 타임라인 (개념)
+## 10. 문제해결 전략 (knowledge_base 기준)
+
+Sim·Real 문서에서 반복된 패턴을 **“어디서 먼저 깨고, 무엇을 맞출지”**로 정리한 것이다. 상세 원인·명령은 각 `work_report`·`davidc_virtual_testbed` 문서를 본다.
+
+### 10.1 원칙: Sim에서 재현 → Real에서 갭만
+
+| 단계 | 할 일 |
+|------|--------|
+| **1. 분리** | 증상이 **파이프라인/TF/파라미터**인지 **실물 전용(모터·노이즈·맵)**인지 가늠한다. |
+| **2. Sim 우선** | Isaac에서 **동일 Nav2·도킹 스택**으로 재현 가능하면, **가상에서 먼저** frame_id·TF 체인·타임아웃·prep_checker 등을 맞춘다. |
+| **3. Real 마감** | Sim과 동일 설정인데만 실기에서 틀리면 **S2R 튜닝**(모터 램프, MPPI, 코스트맵, AMCL)으로 간다. |
+| **4. 환경 이슈** | 도킹 **방향만** 흔들리고 맵이 오래됐으면 **정적맵 vs 실환경 불일치·AMCL** 쪽을 본다. |
+
+```mermaid
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#2d2d2d', 'primaryTextColor':'#f0f0f0', 'primaryBorderColor':'#555', 'lineColor':'#888' }}}%%
+flowchart TB
+    Q["문제 발생"]
+    Q --> SIM_TRY{"Isaac에서\n동일 스택으로\n재현 가능?"}
+    SIM_TRY -->|예| SIM_FIX["Sim 디지털 엔지니어링\nTF·frame_id·브리지·타임아웃\nUSD/카메라 정합"]
+    SIM_TRY -->|아니오/부분| REAL_GAP["실기 S2R\n모터·MPPI·코스트맵\nodom·스캔 품질"]
+    SIM_FIX --> REAL_VERIFY["실기 bringup\n동일 파라미터 검증"]
+    REAL_GAP --> TUNE["zlac 200ms·MPPI critic\n글로벌 코스트 강화 등"]
+    REAL_VERIFY --> OK["해결 또는\n다음 이슈"]
+    TUNE --> OK
+    Q --> ENV{"도킹만 방향 드리프트\n맵 노후?"}
+    ENV -->|예| MAP["글로벌맵·AMCL·\n도킹 구간 태그 우선"]
+    MAP --> OK
+```
+
+### 10.2 영역별 전략 요약
+
+| 영역 | 흔한 증상 | 우선 전략 | 참고 문서 (knowledge_base) |
+|------|-----------|-----------|---------------------------|
+| **Sim 도킹·TF** | `Lost detection`, `Failed initial dock`, `target_frame does not exist` | `/camera_info`·AprilTag 부모 **frame_id**와 `april_bridge` **CAMERA_LINK** 일치; **map→…→camera** TF 체인 확보; Sim은 **static TF로 optical 링크 선설정** | `2026-03-03_docking_tag_tf_relay_오류_해결.md`, `2026-03-05_도킹_apriltag_파이프라인_구조.md`, `2026-03-04_docking_server_transform_fail_코드분석.md` |
+| **Sim 도킹 동작** | 후진 없이 바로 성공 등 Sim 특유 동작 | Sim·물리·컨트롤 차이 인지 후 **실기 기준**으로 파라미터·완료 조건 검증 | `2026-03-05_가상로봇_도킹_후진없이_성공_증상_원인_분석.md` |
+| **S2R 주행** | 제자리 스핀, 출발 지연, 가다 서다 | **모터 가·감속 200ms**; **MPPI**·velocity smoother; 글로벌 **코스트맵**으로 경로 품질; AMCL·progress·리커버리 연쇄 점검 | `260309_sim_to_real_normalization.md`, `260303_nav2_sim_vs_real_analysis.md`, `260226_isaac_sim_vs_real_spin_wobble_analysis.md` |
+| **MPPI 튜닝** | 경로 추종·휘청 | critic 가중치·temperature·샘플 수 등 **옵션별 튜닝** | `260309_MPPI-performance-tuning-options.md` |
+| **실기 도킹·맵** | 도킹 시 방향만 살짝 틀어짐 | 정적맵과 실환경 괴리 → AMCL 흔들림 의심; **맵 갱신·도킹 구간 태그·AMCL 완화** 등 문서화된 대응 | `260309_global_map_vs_changing_env_docking.md`, `260309_docking_flow.md`, `260309_docking_tf_tag0_flow.md` |
+| **시나리오 큐·도킹** | 복수 도크·ID 혼선 | `april_bridge`는 **`target_dock_id`만** 구독해 추가 시점 불일치 제거; Nav2→Dock **순차 result** 후 다음 시나리오 | `260313_시나리오_큐_노드_진행.md` |
+| **담당자 추적** | Jetson·TensorRT·torch 불일치 | **Jetson용 PyTorch 스택** 정렬; 추적은 **Nav2 목표만** — cmd_vel 이원화 방지 | `260310_담당자_추적_주행_예상_작업.md`, `260309_담당자_추적_주행 _전략_구상.md` |
+| **운영·디버그** | 액션 hang, 서버 종료 시 stuck | 도킹 액션 **cancel** 후 종료; `ros2_cmd` 절차 정리 | `ros2_cmd.md` |
+| **RMS·API** | 프로토콜 분산·지연 | **단일 API 경계**·재연결·타임아웃; 주행·도킹·상태 **단계적 노출** | `04-RDS-API-Layer-Analysis-and-Strategy.md` |
+
+### 10.3 “막힐 때” 체크리스트 (짧게)
+
+1. **도킹:** `ros2 topic echo`로 `/detected_dock_pose` **stamp·frame_id** → TF 트리에서 **map 연결** 여부.  
+2. **주행:** 실기만 이상하면 **odom/scan/TF** 품질 → **모터 램프** → **local costmap 반영** 여부.  
+3. **도킹 방향만:** **맵 제작 시점 vs 현재 배치** 불일치 여부.  
+4. **시나리오:** 한 단계 **액션 result** 수신 후 다음 진행되는지.
+
+---
+
+## 11. 타임라인 (개념)
 
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#2d2d2d', 'primaryTextColor':'#f0f0f0', 'primaryBorderColor':'#555', 'lineColor':'#888' }}}%%
@@ -369,7 +421,7 @@ gantt
 
 ---
 
-## 11. 빠른 링크 (knowledge_base 상대 경로)
+## 12. 빠른 링크 (knowledge_base 상대 경로)
 
 | 주제 | 경로 |
 |------|------|
@@ -380,14 +432,17 @@ gantt
 | 시나리오 큐 | `real_docs/work_report/260313_시나리오_큐_노드_진행.md` |
 | AprilTag Sim | `sim_docs/davidc_virtual_testbed/2026-03-05_도킹_apriltag_파이프라인_구조.md` |
 | MPPI 튜닝 | `real_docs/work_report/260309_MPPI-performance-tuning-options.md` |
+| TF·도킹 오류 | `sim_docs/davidc_virtual_testbed/2026-03-03_docking_tag_tf_relay_오류_해결.md` |
+| 맵·도킹 드리프트 | `real_docs/work_report/260309_global_map_vs_changing_env_docking.md` |
 
 ---
 
-## 12. 요약
+## 13. 요약
 
 - **RDS**는 Nav2(주행)·도킹·맵/AMCL·구동으로 구성되며, **2026년에는 시나리오 큐 + RMS Web**으로 다단계 임무를 오케스트레이션한다.
 - **Sim-to-Real**은 Isaac 가상 테스트베드에서 TF·도킹 파이프라인을 검증하고, 실기에서는 **모터 응답·MPPI·코스트맵**으로 갭을 줄인다.
 - **담당자 추적**은 Nav2만 사용해 장애물 회피를 유지한다.
 - **RMS·API**는 다로봇 운영을 위한 다음 레이어로 문서화되어 있다.
+- **문제해결**은 Sim에서 재현 가능한 것부터 닫고, 실기는 S2R·맵·현장 이슈로 좁힌다(§10).
 
 본 문서는 **Sim·Real 두 축으로 쌓아 온 2026 작업**을 한 화면에서 잡기 위한 것이고, 구현·실험 디테일은 각 축의 `.md`에 남겨 둔다.
