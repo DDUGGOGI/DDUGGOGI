@@ -7,6 +7,10 @@
 
 - **[🚀 2025_Comprehensive_Portfolio.md](./02_Comprehensive_Portfolio.md)**: **Physical AI 포트폴리오** (프로젝트 상세 및 기술 스택)
 - **[🚀 2026_AMR_RDS.md](./05_AMR_RDS.md)**: **AMR RDS 개발** (프로젝트 구조 및 문제해결 전략)<br />
+- **[🚀 2026_Curse of Dimensionality Robotics.md](./06_Curse_of_Dimensionality_Robotics.md)** (프로젝트 구조 및 문제해결 전략)<br />
+- **[🚀 2026_Curse of Dimensionality Pick and Place.md](./07_Curse_of_Dimensionality_PickPlace.md)** (프로젝트 구조 및 문제해결 전략)<br />
+
+
 **SKILL**
 Simulation (Omniverse, Isaac Sim, USD, PhysX) · Robotics (ROS2, Jetson, Control) · AI for Robotics (RL/IL, GR00T, Synthetic Data) · Vision (YOLO, TensorRT) · Motion Capture (Meta Quest, Unity) · Logistics Automation (WCS/WMS Integration) · Embedded & System Architecture Design
 
